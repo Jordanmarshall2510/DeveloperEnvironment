@@ -4,11 +4,11 @@ on:
   push:
     branches: [ "main" ]
     paths: 
-      - "PowerShell/**"
+      - "PowerShell/*.ps1"
   pull_request:
     branches: [ "main" ]
     paths: 
-      - "PowerShell/**"
+      - "PowerShell/*.ps1"
   workflow_dispatch:
   
 jobs:
@@ -21,4 +21,4 @@ jobs:
       - name: Run PSScriptAnalyzer
         shell: pwsh
         run: |
-          Invoke-ScriptAnalyzer -Path ./PowerShell/ -Recurse -Severity Error -EnableExit
+          Invoke-ScriptAnalyzer -Path ./PowerShell/ -Recurse -Severity Warning -EnableExit
