@@ -1,0 +1,25 @@
+name: PowerShell Test Job
+
+on:
+  push:
+    branches: [ "main" ]
+    paths: 
+      - "PowerShell/**"
+  pull_request:
+    branches: [ "main" ]
+    paths: 
+      - "PowerShell/**"
+  workflow_dispatch:
+  
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Run PSScriptAnalyzer
+        uses: microsoft/psscriptanalyzer-action@v1.0
+        with:
+          path: .\PowerShell
+          recurse: true 
