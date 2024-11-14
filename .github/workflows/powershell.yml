@@ -22,5 +22,6 @@ jobs:
         uses: microsoft/psscriptanalyzer-action@v1.0
         with:
           path: .\PowerShell
-          recurse: true 
+          recurse: true
+          includeDefaultRules: true
           enableExit: true
