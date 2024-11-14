@@ -1,4 +1,4 @@
-name: PowerShell Test Job
+name: PowerShell
 
 on:
   push:
