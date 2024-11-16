@@ -30,7 +30,7 @@ if ($childDirectories)
         Set-Location $child.FullName
 
         # Get commit ID from within folder
-        $commitId = Invoke-Expression "git rev-parse HEAD"
+        $commitId = & git rev-parse HEAD
 
         # Add full path and commit ID to table
         $table += [pscustomobject]@{Directory = $child.FullName; CommitID = $commitId}
