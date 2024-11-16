@@ -12,9 +12,9 @@ Write-Output $parsedCpuInformation
 
 # Get RAM information
 Write-Output "RAM Information `n"
-$ramSpeed = (Get-WmiObject Win32_PhysicalMemory  -ErrorAction Stop | Measure-Object -Property Speed -Minimum).minimum
-$ramCount= (Get-WmiObject Win32_PhysicalMemory  -ErrorAction Stop | Measure-Object -Property Capacity -Sum).count
-$ramCapacity = (Get-WmiObject Win32_PhysicalMemory  -ErrorAction Stop | Measure-Object -Property Capacity -Sum).sum/1GB
+$ramSpeed = (Get-CimInstance -ClassName Win32_PhysicalMemory -ErrorAction Stop | Measure-Object -Property Speed -Minimum).Minimum
+$ramCount= (Get-CimInstance -ClassName Win32_PhysicalMemory -ErrorAction Stop | Measure-Object -Property Capacity -Sum).Count
+$ramCapacity = (Get-CimInstance -ClassName Win32_PhysicalMemory -ErrorAction Stop | Measure-Object -Property Capacity -Sum).Sum/1GB
 Write-Output "RAM Speed: $ramSpeed MHz"
 Write-Output "RAM Populated: $ramCount"
 Write-Output "Total RAM Capacity: $ramCapacity GB"
