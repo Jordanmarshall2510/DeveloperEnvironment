@@ -44,4 +44,3 @@ Write-Output $table
 
 # Set location back to previous location
 Set-Location $currentDirectory
-
