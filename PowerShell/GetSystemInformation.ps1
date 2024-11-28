@@ -1,3 +1,14 @@
+# Check if temp folder exists
+$tempFolder = 'C:\Temp'
+if (-not(Test-Path -Path $tempFolder)) 
+{
+    Write-Output "Creating $tempFolder directory"
+    New-Item -path $tempFolder -ItemType Directory
+}
+
+# Start transcript
+Start-Transcript -Path $tempFolder
+
 # Get OS information
 Write-Output "OS Information"
 $osInformation = Get-CimInstance -ClassName Win32_OperatingSystem -ErrorAction Stop
@@ -34,3 +45,6 @@ Write-Output "Network Adapter Information"
 $networkAdapterInformation = Get-CimInstance -ClassName Win32_NetworkAdapterConfiguration -ErrorAction Stop
 $parsedNetworkAdapterInformation = $networkAdapterInformation | Format-Table Description, Index -autosize
 Write-Output $parsedNetworkAdapterInformation
+
+# Stop transcript
+Stop-Transcript

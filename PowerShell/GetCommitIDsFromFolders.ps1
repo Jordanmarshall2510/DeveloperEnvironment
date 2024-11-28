@@ -4,6 +4,17 @@ param
     [string] $parentDirectory = ""
 )
 
+# Check if temp folder exists
+$tempFolder = 'C:\Temp'
+if (-not(Test-Path -Path $tempFolder)) 
+{
+    Write-Output "Creating $tempFolder directory"
+    New-Item -path $tempFolder -ItemType Directory
+}
+
+# Start transcript
+Start-Transcript -Path $tempFolder
+
 $currentDirectory = Get-Location
 
 # Check if user defined a different path to current path
@@ -44,3 +55,6 @@ Write-Output $table
 
 # Set location back to previous location
 Set-Location $currentDirectory
+
+# Stop transcript
+Stop-Transcript

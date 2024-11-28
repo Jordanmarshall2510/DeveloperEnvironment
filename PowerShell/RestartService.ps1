@@ -4,12 +4,24 @@ param
     [string] $serviceName = ""
 )
 
+# Check if temp folder exists
+$tempFolder = 'C:\Temp'
+if (-not(Test-Path -Path $tempFolder)) 
+{
+    Write-Output "Creating $tempFolder directory"
+    New-Item -path $tempFolder -ItemType Directory
+}
+
+# Start transcript
+Start-Transcript -Path $tempFolder
+
 $serviceInfo = Get-Service -Name $serviceName
 
 # Check if service exists
 if ($null -eq $serviceInfo)
 {
     Write-Error "$serviceName does not exist."
+    Stop-Transcript
     exit
 }
 
@@ -31,5 +43,9 @@ $serviceInfo = Get-Service -Name $serviceName
 if ($serviceInfo.Status -ne "Running")
 {
     Write-Error "$serviceName failed to restart."
+    Stop-Transcript
     exit
 }
+
+# Stop transcript
+Stop-Transcript
