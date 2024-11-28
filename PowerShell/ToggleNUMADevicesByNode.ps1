@@ -13,6 +13,17 @@ param
     [switch] $disable
 )
 
+# Check if temp folder exists
+$tempFolder = 'C:\Temp'
+if (-not(Test-Path -Path $tempFolder)) 
+{
+    Write-Output "Creating $tempFolder directory"
+    New-Item -path $tempFolder -ItemType Directory
+}
+
+# Start transcript
+Start-Transcript -Path $tempFolder
+
 # Get device object from string
 $getDevices = Get-PnpDevice -FriendlyName $deviceName
 
@@ -23,7 +34,8 @@ $getDevicesOnNode = $getDevices | Get-PnpDeviceProperty -KeyName "DEVPKEY_Device
 if($enable)
 {
     $getDevicesOnNode | Enable-PnpDevice
-    "Enabled $deviceName with NUMA node $numaNode."
+    Write-Output "Enabled $deviceName with NUMA node $numaNode."
+    Stop-Transcript
     exit
 }
 
@@ -31,6 +43,7 @@ if($enable)
 if ($disable) 
 {
     $getDevicesOnNode | Disable-PnpDevice
-    "Disabled $deviceName with NUMA node $numaNode."
+    Write-Output "Disabled $deviceName with NUMA node $numaNode."
+    Stop-Transcript
     exit
 }
