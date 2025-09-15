@@ -22,7 +22,7 @@ if ($null -eq (Get-Module -ListAvailable -Name PSWindowsUpdate))
 } 
 
 Import-Module PSWindowsUpdate
-Get-WindowsUpdate -verbose | Install-WindowsUpdate -verbose
+Get-WindowsUpdate -Install -AcceptAll -AutoReboot -Verbose
 
 # Update git
 Write-Output "Installing latest git updates..."
@@ -30,7 +30,7 @@ git update-git-for-windows
 
 # Use winget to update applications on Windows
 Write-Output "Installing latest application updates..."
-winget update --all --verbose
+winget update --all --silent --verbose
 
 # Stop transcript
 Stop-Transcript
