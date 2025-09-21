@@ -32,6 +32,7 @@ Linting improves code quality, readability, and maintainability by enforcing con
 Linting jobs are executed for every pull request or merge into the main branch. The particular job that runs will be determined by the directory targeted by the pull request. 
 
 [![PowerShell](https://github.com/Jordanmarshall2510/DeveloperEnvironment/actions/workflows/powershell.yml/badge.svg)](https://github.com/Jordanmarshall2510/DeveloperEnvironment/actions/workflows/powershell.yml)
+[![Bash](https://github.com/Jordanmarshall2510/DeveloperEnvironment/actions/workflows/bash.yml/badge.svg)](https://github.com/Jordanmarshall2510/DeveloperEnvironment/actions/workflows/bash.yml)
 
 ## Contributing
 
