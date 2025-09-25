@@ -7,12 +7,14 @@ on:
       - 'Bash/*.sh'
       - 'Bash/.bashrc'
       - 'Bash/.bash_aliases'
+      - 'Bash/.bash_profile'
   pull_request:
     branches: [ "main" ]
     paths: 
       - 'Bash/*.sh'
       - 'Bash/.bashrc'
       - 'Bash/.bash_aliases'
+      - 'Bash/.bash_profile'
   workflow_dispatch:
 
 jobs:
