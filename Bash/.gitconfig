@@ -1,0 +1,42 @@
+[user]
+    name = Your Name
+    email = your.email@example.com
+
+[core]
+    editor = vim
+    autocrlf = input
+    whitespace = fix,trailing-space,space-before-tab
+
+[color]
+    ui = auto
+
+[alias]
+    gs = status              # Show working tree status
+    ga = add .               # Stage all changes
+    gc = commit              # Create a new commit
+    gca = commit --amend --no-edit  # Amend previous commit without editing
+    gr = restore .           # Discard all local changes
+    grh = reset HEAD         # Unstage changes
+    gp = push origin HEAD    # Push current branch to origin
+    gpa = push origin HEAD --force-with-lease  # Force push with safety
+    gl = log --oneline       # Show commit logs in one line
+    gd = diff                # Show changes between commits
+    gb = branch              # List or manage branches
+    gch = checkout           # Switch branches or restore files
+    grb = rebase HEAD        # Rebase current branch
+    gpr = pull --rebase      # Pull and rebase instead of merge
+
+[push]
+    default = simple
+
+[pull]
+    rebase = true
+
+[init]
+    defaultBranch = main
+
+[merge]
+    tool = vscode
+
+[diff]
+    tool = vscode
