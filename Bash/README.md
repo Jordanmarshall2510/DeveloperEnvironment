@@ -8,3 +8,4 @@ Below contains a description and usage of each file in this folder:
 | **.bash_aliases**                 | Contains custom command shortcuts (aliases) for frequently used commands. This file is typically sourced by .bashrc   | `None`                                                            |
 | **.bash_profile**                 | Login shell configuration file that runs at login. Often used to set environment variables and load .bashrc          | `None`                                                            |
 | **.gitconfig**                    | Global Git configuration file containing user settings and preferences                                               | `None`                                                            |
+| **git_clone.sh**                  | Script that can clone multiple repos in a single execution                                                            | `string::location_to_clone (optional)`
