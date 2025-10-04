@@ -1,0 +1,35 @@
+# macOS system files
+.DS_Store
+
+# Python virtual environments
+venv/
+.env/
+
+# Logs
+*.log
+
+# IDE settings
+.vscode/
+.idea/
+
+# OS generated files
+Thumbs.db
+
+# Environment files
+.env.local
+.env.*
+
+# C/C++ generated files
+*.o
+*.obj
+*.so
+*.dll
+*.exe
+*.out
+*.a
+*.lib
+*.dll
+*.pdb
+*.dSYM/
+build/
+cmake-build-*/
