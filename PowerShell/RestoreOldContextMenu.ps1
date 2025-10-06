@@ -2,6 +2,10 @@
 
 # Check if temp folder exists
 $tempFolder = 'C:\Temp'
+$scriptName = [System.IO.Path]::GetFileNameWithoutExtension($MyInvocation.MyCommand.Name)
+$dateTime = Get-Date -Format "yyyy-MM-dd_HH-mm"
+$logFileName = "$scriptName`_$dateTime.log"
+
 if (-not(Test-Path -Path $tempFolder)) 
 {
     Write-Output "Creating $tempFolder directory"
@@ -9,7 +13,7 @@ if (-not(Test-Path -Path $tempFolder))
 }
 
 # Start transcript
-Start-Transcript -Path $tempFolder
+Start-Transcript -Path "$tempFolder\$logFileName"
 
 # Restore old context menu by creating registry key
 $keyPath = "HKCU:\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32"
