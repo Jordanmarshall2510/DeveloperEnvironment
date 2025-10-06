@@ -27,6 +27,10 @@ param
 
 # Check if temp folder exists
 $tempFolder = 'C:\Temp'
+$scriptName = [System.IO.Path]::GetFileNameWithoutExtension($MyInvocation.MyCommand.Name)
+$dateTime = Get-Date -Format "yyyy-MM-dd_HH-mm"
+$logFileName = "$scriptName`_$dateTime.log"
+
 if (-not(Test-Path -Path $tempFolder)) 
 {
     Write-Output "Creating $tempFolder directory"
@@ -34,7 +38,7 @@ if (-not(Test-Path -Path $tempFolder))
 }
 
 # Start transcript
-Start-Transcript -Path $tempFolder
+Start-Transcript -Path "$tempFolder\$logFileName"
 
 $timePeriod = if ($hours -le 12) {"AM"} else {"PM"}
 
