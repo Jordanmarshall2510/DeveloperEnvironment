@@ -33,6 +33,7 @@ Linting jobs are executed for every pull request or merge into the main branch. 
 
 [![PowerShell](https://github.com/Jordanmarshall2510/DeveloperEnvironment/actions/workflows/powershell.yml/badge.svg)](https://github.com/Jordanmarshall2510/DeveloperEnvironment/actions/workflows/powershell.yml)
 [![Bash](https://github.com/Jordanmarshall2510/DeveloperEnvironment/actions/workflows/bash.yml/badge.svg)](https://github.com/Jordanmarshall2510/DeveloperEnvironment/actions/workflows/bash.yml)
+[![TruffleHog](https://github.com/Jordanmarshall2510/DeveloperEnvironment/actions/workflows/trufflehog.yml/badge.svg)](https://github.com/Jordanmarshall2510/DeveloperEnvironment/actions/workflows/trufflehog.yml)
 
 ## Contributing
 
