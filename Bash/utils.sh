@@ -1,20 +1,18 @@
 #!/usr/bin/bash
 
-successful()
-{
+successful() {
     if [ -n "$1" ]; then
         local message="$1"
         echo "$message"
     fi
 }
 
-error()
-{
+error() {
     if [ -n "$1" ]; then
         local message="$1"
         echo "$message"
     fi
-    
+
     if [ -n "$2" ]; then
         local current_dir="$2"
         cd "$current_dir" || echo "Failed to return to $current_dir"
